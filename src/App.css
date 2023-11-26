@@ -1,42 +1,291 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  font-family: "Nunito";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+.center {
+  margin-left: calc(50% - 800px);
+  margin-right: calc(50% - 800px);
+}
+body {
+  background-color: #ececec47;
+}
+
+.header {
+  background-color: blue;
+}
+
+.header_wrapper {
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  height: 50px;
+  width: 50px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header_input {
+  position: relative;
+  background-color: #fff;
+
+  border-radius: 10px;
+  padding: 10px 20px;
+  padding-left: 55px;
+  width: 700px;
+  font-size: 16px;
+  transition: all 0.15s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header_input:focus {
+  border: 3px solid rgba(72, 106, 201, 0.849);
 }
 
-.card {
-  padding: 2em;
+.search_img {
+  width: 30px;
+  height: 38px;
+  opacity: 0.5;
+  position: absolute;
+  left: 245px;
+  top: 16px;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+/* middle content */
+
+.middle_content {
+  display: flex;
+  padding-top: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile_card {
+  width: 400px;
+  height: 600px;
+}
+
+.profile_img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.profile_name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.profile_link {
+  font-size: 20px;
+}
+
+.profile_link:visited {
+  color: blue;
+}
+
+.profile_info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.followers {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.following {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.info_repos {
+  height: 600px;
+}
+
+.h_repositories {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.quantity_repos {
+  margin-top: 20px;
+  background-color: #ececec47;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card_repos {
+  width: 900px;
+  padding: 20px 20px;
+  background-color: #fff;
+}
+
+.link_repos {
+  font-size: 40px;
+}
+
+.title_repos {
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  background: #ffffff;
+}
+
+.pagination a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.pagination a:hover {
+  color: #2556df;
+}
+
+.pagination .active {
+  color: #ffffff;
+  background: #2556df;
+  font-weight: 600;
+  border: 1px solid #2556df;
+}
+
+.welcome_block {
+  text-align: center;
+  margin-top: 15%;
+}
+
+.welocme_img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.welcome_text {
+  color: gray;
+  font-size: 20px;
 }
