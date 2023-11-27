@@ -61,6 +61,8 @@ export const fetchUser = createAsyncThunk(
   }
 );
 
+
+
 const initialState = {
   items: [],
   status: "loading", //loading, error, succes
@@ -70,13 +72,15 @@ const fetchSlice = createSlice({
   name: "fetch",
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchUser.pending]: (state: RootState) => {
+  extraReducers: (builder) => {
+
+    builder.addCase(fetchUser.pending, (state: RootState) => {
       state.status = "loading";
       state.items = [];
-    },
-    [fetchUser.fulfilled]: (state: RootState, action:PayloadAction) => {
-      state.items = {
+    });
+
+    builder.addCase(fetchUser.fulfilled, (state: RootState, action) => {
+    state.items = {
         avatar: action.payload.avatar_url,
         userName: action.payload.login,
         name: action.payload.name,
@@ -86,11 +90,12 @@ const fetchSlice = createSlice({
         url: action.payload.html_url,
       };
       state.status = "succes";
-    },
-    [fetchUser.rejected]: (state: RootState) => {
+    });
+
+    builder.addCase(fetchUser.rejected, (state: RootState) => {
       state.status = "error";
       state.items = [];
-    },
+    })
   },
 });
 
