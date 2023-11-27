@@ -1,6 +1,7 @@
+import React from "react";
 import startLogo from "../../../public/welcome_logo.svg";
 
-const WelcomeText = () => {
+const WelcomeText:React.FC = () => {
   return (
     <div className="welcome_block">
       <img src={startLogo} alt="welcome_logo" className="welocme_img" />

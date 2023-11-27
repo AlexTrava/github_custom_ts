@@ -1,6 +1,7 @@
+import React from "react";
 import { useSelector } from "react-redux";
 
-const ProfileCard = () => {
+const ProfileCard:React.FC = () => {
   const { avatar, userName, name, follower, following, url } = useSelector(
     (state) => state.fetch.items
   );

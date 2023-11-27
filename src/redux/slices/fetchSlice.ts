@@ -2,6 +2,11 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../store";
 
+const instance = axios.create({
+  baseURL: 'https://api.github.com/users/', 
+  timeout: 5000,
+});
+
 export type  FetchApiGithub = {
   login: string,
   id: number,
@@ -54,8 +59,8 @@ export type State = {
 export const fetchUser = createAsyncThunk(
   "fetch/fetchUserInfo",
   async (searchValue:string) => {
-    const { data }  = await axios.get<FetchApiGithub>(
-      `https://api.github.com/users/${searchValue}`
+    const { data }  = await instance.get<FetchApiGithub>(
+      searchValue
     );
     return data;
   }
