@@ -1,17 +1,19 @@
 import Header from "../components/Header/Header.tsx";
 import ProfileCard from "../components/ProfileCard/ProfileCard.tsx";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUser } from "../redux/slices/fetchSlice";
-import { fetchRepo } from "../redux/slices/fetchRepoSlice";
+import { fetchUser } from "../redux/slices/fetchSlice.ts";
+import { fetchRepo } from "../redux/slices/fetchRepoSlice.ts";
 import { useEffect } from "react";
 import Pagination from "../components/Pagination/Pagination.tsx";
 import WelcomeText from "../components/StartText/WelcomeText.tsx";
+import { useAppDispatch, useAppSelector } from "../redux/store.ts";
 
-const MainPage = () => {
-  const dispatch = useDispatch();
-  const searchValue = useSelector((state) => state.search.searchValue);
-  const { repos, userName } = useSelector((state) => state.fetch.items);
-  const repositories = useSelector((state) => state.fetchRepo.items);
+const MainPage: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const searchValue = useAppSelector((state) => state.search.searchValue);
+  const { repos, userName }: ItemsFetch = useAppSelector(
+    (state) => state.fetch.items
+  );
+  const repositories = useAppSelector((state) => state.fetchRepo.items);
 
   const getInfoUser = async () => {
     dispatch(fetchUser(searchValue));

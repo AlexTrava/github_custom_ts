@@ -1,13 +1,13 @@
 // import styles from './Header.module.css'
 import { useState, useCallback } from "react";
 import { debounce } from "lodash";
-import { useDispatch } from "react-redux";
 import { setSearchValue } from "../../redux/slices/searchSlice";
 import logo from "../../../public/logo.svg";
+import { useAppDispatch } from "../../redux/store";
 
 const Header = () => {
   const [value, setValue] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const updateSearchValueTest = useCallback(
     debounce((str: string) => {

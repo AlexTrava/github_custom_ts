@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../redux/store";
+import { ItemsFetch } from "../../redux/slices/fetchSlice";
 
-const ProfileCard:React.FC = () => {
-  const { avatar, userName, name, follower, following, url } = useSelector(
-    (state) => state.fetch.items
-  );
+const ProfileCard: React.FC = () => {
+  const { avatar, userName, name, follower, following, url }: ItemsFetch =
+    useAppSelector((state) => state.fetch.items);
   return (
     <div className="profile_card">
       <img src={avatar} alt="#" className="profile_img" />
