@@ -2,7 +2,7 @@ import React from "react";
 
 export type CardReposProps = {
   name: string;
-  description: string;
+  description?: string;
   url: string;
 };
 

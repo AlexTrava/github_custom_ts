@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CardRepos from "../CardRepos/CardRepos";
 import ReactPaginate from "react-paginate";
+import { fetchRepoResponce } from "../../redux/slices/fetchRepoSlice";
 
 export type PaginationProps = {
   repositories: string;
@@ -18,9 +19,9 @@ const Pagination: React.FC<PaginationProps> = ({ repositories }) => {
 
   const repoList = repositories
     .slice(offset, offset + perPage)
-    .map(({ name, description, url, id }) => {
+    .map(({ name, description, html_url, id }:fetchRepoResponce) => {
       return (
-        <CardRepos name={name} description={description} url={url} key={id} />
+        <CardRepos name={name} description={description} url={html_url} key={id} />
       );
     });
 
@@ -39,7 +40,6 @@ const Pagination: React.FC<PaginationProps> = ({ repositories }) => {
         pageRangeDisplayed={5}
         onPageChange={handlePageClick}
         containerClassName={"pagination"}
-        subContainerClassName={"pages pagination"}
         activeClassName={"active"}
       />
     </>

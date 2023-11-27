@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction  } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../store";
 
@@ -11,7 +11,7 @@ export type fetchRepoResponce = {
 
 export const fetchRepo = createAsyncThunk(
   "fetchRepo/fetchRepoInfo",
-  async (searchValue) => {
+  async (searchValue:string) => {
     const { data } = await axios.get(
       `https://api.github.com/users/${searchValue}/repos`
     );
@@ -20,7 +20,7 @@ export const fetchRepo = createAsyncThunk(
         return {
           name: name,
           description: description,
-          url: html_url,
+          html_url: html_url,
           id: id,
         };
       }
@@ -42,7 +42,7 @@ const fetchRepoSlice = createSlice({
       state.status = "loading";
       state.items = [];
     },
-    [fetchRepo.fulfilled]: (state: RootState, action) => {
+    [fetchRepo.fulfilled]: (state: RootState, action:PayloadAction) => {
       state.items = action.payload;
       state.status = "succes";
     },
