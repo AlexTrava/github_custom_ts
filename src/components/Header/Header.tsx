@@ -1,24 +1,21 @@
 // import styles from './Header.module.css'
-import { useState, useCallback } from "react";
-import { debounce } from "lodash";
+import { useState, useCallback, useEffect } from "react";
 import { setSearchValue } from "../../redux/slices/searchSlice";
 import logo from "../../../public/logo.svg";
 import { useAppDispatch } from "../../redux/store";
+import useDebounce from "../../hooks/useDebounce.ts";
 
 const Header = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<string>("");
+  const debouncedValue = useDebounce<string>(value, 750);
   const dispatch = useAppDispatch();
 
-  const updateSearchValueTest = useCallback(
-    debounce((str: string) => {
-      dispatch(setSearchValue(str));
-    }, 750),
-    []
-  );
+  useEffect(() => {
+    dispatch(setSearchValue(debouncedValue));
+  }, [debouncedValue]);
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setValue(e.target.value);
-    updateSearchValueTest(e.target.value);
   };
   return (
     <div className="header_wrapper center">

@@ -1,6 +1,6 @@
 import Header from "../components/Header/Header.tsx";
 import ProfileCard from "../components/ProfileCard/ProfileCard.tsx";
-import { fetchUser } from "../redux/slices/fetchSlice.ts";
+import { ItemsFetch, fetchUser } from "../redux/slices/fetchSlice.ts";
 import { fetchRepo } from "../redux/slices/fetchRepoSlice.ts";
 import { useEffect } from "react";
 import Pagination from "../components/Pagination/Pagination.tsx";
