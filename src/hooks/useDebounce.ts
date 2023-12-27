@@ -1,27 +1,17 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export type DebounceProps = {
-    func: () => void,
-    delay:number,
-    cleanUp:boolean,
+function useDebounce<T>(value: T, delay?: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay || 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
 }
 
-const useDebouncedFunction = (func, delay, cleanUp = false):DebounceProps =>{
-  const timeoutRef = useRef();
-
-  function clearTimer() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = undefined;
-    }
-  }
-
-  useEffect(() => (cleanUp ? clearTimer : undefined), [cleanUp]);
-
-  return (...args) => {
-    clearTimer();
-    timeoutRef.current = setTimeout(() => func(...args), delay);
-  };
-}
-
-export default useDebouncedFunction;
+export default useDebounce;

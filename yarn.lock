@@ -220,10 +220,10 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@esbuild/linux-x64@0.19.7":
+"@esbuild/win32-x64@0.19.7":
   version "0.19.7"
-  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.19.7.tgz"
-  integrity sha512-ZYZopyLhm4mcoZXjFt25itRlocKlcazDVkB4AhioiL9hOWhDldU9n38g62fhOI4Pth6vp+Mrd5rFKxD0/S+7aQ==
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.19.7.tgz"
+  integrity sha512-gRaP2sk6hc98N734luX4VpF318l3w+ofrtTu9j5L8EQXF+FzQKV6alCOHMVoJJHvVK/mGbwBXfOL1HETQu9IGQ==
 
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"
@@ -339,15 +339,10 @@
     redux-thunk "^2.4.2"
     reselect "^4.1.8"
 
-"@rollup/rollup-linux-x64-gnu@4.5.1":
+"@rollup/rollup-win32-x64-msvc@4.5.1":
   version "4.5.1"
-  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.5.1.tgz"
-  integrity sha512-CWPkPGrFfN2vj3mw+S7A/4ZaU3rTV7AkXUr08W9lNP+UzOvKLVf34tWCqrKrfwQ0NTk5GFqUr2XGpeR2p6R4gw==
-
-"@rollup/rollup-linux-x64-musl@4.5.1":
-  version "4.5.1"
-  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.5.1.tgz"
-  integrity sha512-ZRETMFA0uVukUC9u31Ed1nx++29073goCxZtmZARwk5aF/ltuENaeTtRVsSQzFlzdd4J6L3qUm+EW8cbGt0CKQ==
+  resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.5.1.tgz"
+  integrity sha512-5I3Nz4Sb9TYOtkRwlH0ow+BhMH2vnh38tZ4J4mggE48M/YyJyp/0sPSxhw1UeS1+oBgQ8q7maFtSeKpeRJu41Q==
 
 "@types/babel__core@^7.20.4":
   version "7.20.5"
@@ -1177,11 +1172,6 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
