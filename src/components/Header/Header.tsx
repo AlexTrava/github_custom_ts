@@ -1,4 +1,3 @@
-// import styles from './Header.module.css'
 import { useState, useEffect } from "react";
 import { setSearchValue } from "../../redux/slices/searchSlice";
 import logo from "../../../public/logo.svg";
