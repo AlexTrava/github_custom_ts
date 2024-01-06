@@ -1,5 +1,5 @@
 // import styles from './Header.module.css'
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { setSearchValue } from "../../redux/slices/searchSlice";
 import logo from "../../../public/logo.svg";
 import { useAppDispatch } from "../../redux/store";
